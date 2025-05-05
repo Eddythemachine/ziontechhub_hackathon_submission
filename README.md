@@ -1,99 +1,72 @@
-# ziontechhub_hackathon_submission
-Official submission for the ZionTechub Hackathon 2025 (Data Science Category). A 3-week challenge to solve real-world problems using data-driven insights, analytics, and machine learning. Submission deadline: May 6th, 2025.
+# ZionTechhub Hackathon Submission
 
-# Loan Risk Assessment Model
-
-Absolutely! Below is a **step-by-step template** for writing a **professional GitHub README for a Data Science project**. This is widely used by data scientists to showcase notebooks, results, and insights effectively.
-
----
-
-
-### 1. **Loan Risk Assessment Model**
-
-```markdown
-# 📊 Customer Loan Risk Assessment
-Predicting whether loan applicants are risky using machine learning and real-world data.
-```
+Official submission for the ZionTechhub Hackathon 2025 (Data Science Category).  
+A 3-week challenge focused on solving real-world problems using data-driven insights, analytics, and machine learning.  
+**Submission Deadline:** May 6th, 2025
 
 ---
 
-### 2. **Project Introduction**
+## Loan Risk Assessment Model
 
-```markdown
-## 📌 Introduction
-
-This project aims to assess the **credit risk of loan applicants** by building predictive machine learning models. The goal is to determine whether a loan applicant is "risky" or "not risky" based on demographic and financial features such as income, job history, home ownership, and location.
-```
+A machine learning solution to predict customer loan default risk based on demographic and financial attributes.
 
 ---
 
-### 3. **Business or Research Objective**
+## Introduction
 
-```markdown
-## 🎯 Objective
-
-- Build a classification model to **predict loan risk**.
-- Understand **key factors** that influence applicant risk.
-- Help financial institutions make better **credit decisions**.
-```
+This project addresses the need for accurate and scalable credit risk assessment by financial institutions.  
+Using applicant data such as income, profession, location, and ownership details, we train classification models to predict loan risk and enable smarter credit decisions.
 
 ---
 
-### 4. **Dataset Overview**
+## Objective
 
-```markdown
-## 🧠 Dataset Description
-
-The dataset includes information on loan applicants. Here are the key features:
-
-| Feature | Description |
-|---------|-------------|
-| `Income` | Applicant's income |
-| `Age` | Age in years |
-| `Experience` | Work experience in years |
-| `Married/Single` | Marital status |
-| `House_Ownership` | Type of residence |
-| `Car_Ownership` | Car ownership status |
-| `Profession` | Occupation of the applicant |
-| `CITY`, `STATE` | Location information |
-| `CURRENT_JOB_YRS` | Years in current job |
-| `CURRENT_HOUSE_YRS` | Years in current house |
-| `Risk_Flag` | **Target** – 1: Risky, 0: Not Risky |
-```
+- Build a classification model to predict whether an applicant is "risky" or "not risky".
+- Identify the most influential features contributing to applicant risk.
+- Enhance decision-making capabilities in the credit approval process.
 
 ---
 
-### 5. **Exploratory Data Analysis (EDA)**
+## Dataset Overview
 
-```markdown
-## 📊 Exploratory Data Analysis
+The dataset consists of the following key features:
 
-- Distribution of income, age, and profession
-- Relationships between target variable and features
-- Visualizations with histograms, boxplots, and heatmaps
-```
-
----
-
-### 6. **Data Preprocessing**
-
-```markdown
-## 🧹 Data Preprocessing
-
-- Missing values handled (if any)
-- Encoding of categorical variables using Label/One-Hot encoding
-- Feature scaling using StandardScaler
-- Addressing class imbalance using SMOTE
-```
+| Feature               | Description                                      |
+|-----------------------|--------------------------------------------------|
+| `Income`              | Applicant's annual income                        |
+| `Age`                 | Applicant's age in years                         |
+| `Experience`          | Total years of work experience                   |
+| `Married/Single`      | Marital status                                   |
+| `House_Ownership`     | Type of house ownership                          |
+| `Car_Ownership`       | Whether the applicant owns a car                 |
+| `Profession`          | Occupation type                                  |
+| `CITY`, `STATE`       | Geographical information                         |
+| `CURRENT_JOB_YRS`     | Years in current job                             |
+| `CURRENT_HOUSE_YRS`   | Years at current residence                       |
+| `Risk_Flag`           | Target variable — 1: Risky, 0: Not Risky         |
 
 ---
 
-### 7. **Modeling & Evaluation**
+## Exploratory Data Analysis (EDA)
 
-```markdown
-## 🤖 Model Training and Evaluation
+- Visualized distributions of income, age, and job experience.
+- Plotted feature relationships with the target variable (`Risk_Flag`).
+- Used histograms, boxplots, heatmaps, and pie charts to identify trends and patterns.
 
-Models Trained:
+---
+
+## Data Preprocessing
+
+- Categorical features encoded using LabelEncoder, OneHotEncoder, and TargetEncoder.
+- Numerical features scaled using `StandardScaler`.
+- Addressed class imbalance using `SMOTE` to improve recall for the minority (risky) class.
+- Split data into training and validation sets using `train_test_split`.
+
+---
+
+## Modeling and Evaluation
+
+Trained and compared several classification algorithms:
 - Logistic Regression
 - Decision Tree
 - Random Forest
@@ -102,119 +75,86 @@ Models Trained:
 - Support Vector Machine
 - Naive Bayes
 
-Metrics Used:
-- Accuracy
-- ROC AUC Score
-- Classification Report (Precision, Recall, F1 Score)
-
-📈 **Best Performing Model**: Random Forest (update with your results)
-```
+Models were evaluated based on accuracy, ROC AUC score, and classification reports.
 
 ---
 
-### 8. **Results**
+## Model Performance
 
-```markdown
-## ✅ Results
+**Best Model:** XGBoost Classifier
 
-| Model | Accuracy | ROC AUC |
-|-------|----------|---------|
-| Logistic Regression | 0.78 | 0.76 |
-| Random Forest | 0.85 | 0.84 |
-| XGBoost | 0.86 | 0.85 |
 
-*Note: Replace with your actual metrics.*
-```
 
----
+=== Model Performance ===
+Accuracy: 0.8936
+ROC AUC: 0.9338
+Classification Report:
+precision recall f1-score support
 
-### 9. **Conclusion**
 
-```markdown
-## 🧾 Conclusion
+       0       0.97      0.91      0.94     35466
+       1       0.54      0.77      0.64      4854
 
-- Income, age, and profession are strong predictors of loan risk.
-- Ensemble models like XGBoost and Random Forest perform best.
-- Preprocessing and handling imbalanced data significantly improved accuracy.
-```
+accuracy                           0.89     40320
+
+
+macro avg 0.75 0.84 0.79 40320
+weighted avg 0.92 0.89 0.90 40320
+
 
 ---
 
-### 10. **Future Work**
+## Conclusion
 
-```markdown
-## 🔮 Future Improvements
-
-- Hyperparameter tuning (GridSearchCV)
-- Model interpretability using SHAP
-- Deploy model as a web app (using Streamlit or Flask)
-```
+- Ensemble models (Random Forest and XGBoost) demonstrated superior performance.
+- Risk prediction was strongly influenced by income, profession, job tenure, and location.
+- SMOTE significantly improved recall for the minority (risky) class.
 
 ---
 
-### 11. **Usage Instructions**
+## Future Improvements
 
-````markdown
-## 🛠️ How to Run
+- Perform hyperparameter optimization using `GridSearchCV`.
+- Add model explainability with SHAP or LIME.
+- Deploy the model via a web interface using Streamlit or Flask.
+- Incorporate external financial and credit history data if available.
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/loan-risk-assessment.git
-````
+---
 
-2. Install dependencies:
+## How to Run
+
+## 1. Clone this repository:
 
    ```bash
-   pip install -r requirements.txt
-   ```
+   git clone https://github.com/Eddythemachine/ziontechhub_hackathon.git
+   cd ziontechhub_hackathon
+```
 
-3. Open the notebook:
+## 2. Install dependencies:
+pip install -r requirements.txt
 
-   ```bash
-   jupyter notebook loan_risk_assesment.ipynb
-   ```
 
-````
+## 3. Launch the notebook:
+jupyter notebook loan_risk_assessment.ipynb
 
----
+## Folder Structure
 
-### 12. **Folder Structure (Optional)**
-```markdown
-## 📁 Folder Structure
-
-````
-
-loan-risk-assessment/
+ziontechhub_hackathon/
 ├── data/
 │   ├── train.csv
 │   └── test.csv
 ├── models/
 ├── notebooks/
-│   └── loan\_risk\_assesment.ipynb
+│   └── loan_risk_assessment.ipynb
 ├── README.md
 └── requirements.txt
 
-```
-```
-
----
-
-### 13. **License**
-
-```markdown
-## 📄 License
-
+License
 This project is licensed under the MIT License.
-```
 
----
+Acknowledgments
+ZionTechhub Hackathon organizers
 
-### 14. **Credits / Acknowledgements**
+scikit-learn and imbalanced-learn
 
-```markdown
-## 🙏 Acknowledgments
-
-- scikit-learn for machine learning tools
-- imbalanced-learn for SMOTE
-- Kaggle/open source dataset
-```
+Kaggle and open-source contributors
